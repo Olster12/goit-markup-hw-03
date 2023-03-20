@@ -2,15 +2,19 @@
 --primaey-text-color:#757575;
 --hed-text-color:#212121;
 --accent-logo-color:#2196F3;
+--background-color-header: #FFFFFF;
 --hero-backgraund-color:#2F303A;
 --link-color:#2196F3;
 --backgraund-section: #F5F4FA;
+--card-set-gap: 30px;
+--background-card-content: rgba(255, 255, 255, 1);
 }
 
 
 .page {
     margin: 0;
     color: var(--primaey-text-color);
+    
         
     font-family: Roboto, sans-serif;
     font-weight: 400;
@@ -27,22 +31,45 @@
     margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+}
 .container {
    width: 1200px;
    margin-left: auto;
    margin-right: auto;
    padding-left: 15px;
    padding-right: 15px;
-   outline: 1px solid tomato;
+
  }
 
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 header {
-    background-color: #FFFFFF;
+    background-color: var(--background-color-header);
 }
 
 /* Logo */
 .logo {
+    margin-right: 92px;
+    padding-top: 24px;
+    padding-bottom: 25px;
     color: #000000;
 
     font-family: 'Raleway', sans-serif;
@@ -56,9 +83,29 @@ span {
     color: var(--accent-logo-color);
 }
 
+.header {
+    display: flex;
+    background-color: #FFFFFF;;
+    border: 1px solid #ECECEC;
+}
+
 /*Nav sayte*/
-.site-nav a {
+.site-nav {
+    display: flex;
+}
+
+.site-nav .item {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.site-nav .item + .item {
+    margin-left: 50px;
+}
+
+.site-nav .link {
     color: #212121;
+
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
@@ -74,14 +121,26 @@ span {
     color: var(--link-color);
 }
 
-.phone-email a {
+.phone-email {
+    display: flex;
+    margin-left: auto;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.phone-email .link {
     color: var(--primaey-text-color);
+
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
 
+.phone-email .item.item:not(:last-child) {
+    margin-right: 40px;
+
+}
 .phone-email .link:hover,
 .phone-email .link:focus {
     color: var(--link-color);
@@ -108,13 +167,15 @@ span {
 
 
 /* Аdvances */
-.adv-container {
-    padding: 94px 215px;
+.advance-box {
+    display: flex;
 }
 
+.advance-box > .item:not(:last-child) {
+    margin-right: 30px;
+}
 
-.advances .advances-title {
-    margin-top: 0;
+.advances-title {
     margin-bottom: 10px;
 
     color: var(--hed-text-color);
@@ -125,23 +186,27 @@ span {
     text-transform: uppercase;
 }
 
-.advances .advances-text {
-    margin-top: 0;
-    margin-bottom: 0;
-    
+.advances-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
 }
 
 
-/* Section */
-.section {
-    padding: 0px 215px 94px;
+/* Work */
+.work {
+    padding-top: 0;
 }
 
-.section-title {
-    margin-top: 0;
+.work-box > .item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.work-box {
+    display: flex;
+}
+
+.work-title {
     margin-bottom: 50px;
 
     color: var(--hed-text-color);
@@ -156,33 +221,53 @@ span {
 
 /* Team */
 .team {
-    padding: 0px 215px 94px;
-    background: var(--backgraund-section);
-    }
+    background-color: var(--backgraund-section);
+}
 
 .team-title {
-    margin-top: 30px;
     margin-bottom: 10px;
 
     color: var(--hed-text-color);
 
-    font-weight: 500;
-    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
     line-height: 1.19;
     text-align: center;
 }
 
-.team .text {
+/* Card Team */
+
+.card-team {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--card-set-gap));
+    margin-top: calc(-1 * var(--card-set-gap));
+}
+
+.card-team > .item {
+    flex-basis: calc(100% / 4 - var(--card-set-gap));
+    margin-left: var(--card-set-gap);
+    margin-top: var(--card-set-gap);
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    background-color: var(--background-card-content);
+}
+
+.team-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     text-align: center;
 }
-
     /* Footer */
 footer {
     color: #FFFFFF;
     background: #2F303A;
-    
-    
 }
 
 address {
@@ -191,17 +276,30 @@ address {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.71;
+    line-height: 1.14;
 }
 
 .logo-footer {
+    display: flex;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 28px;
+
     color: #FFFFFF;
  }
 
 .site-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.mail-footer {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.footer-top{
+    margin-top: 12px;
+}
 .site-footer .link:focus,
 .site-footer .link:hover {
     color: var (--link-color);
@@ -234,10 +332,12 @@ address {
 }
 
 .button-secondary {
+    padding: 6px 22px;
+
     color: #212121;
     background-color:#F5F4FA;
-
-    padding: 6px 22px;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .button-secondary.link:hover,
@@ -253,9 +353,18 @@ address {
 
 
 /* Portfolio */
-.portfolio-titel {
-    margin: 20px 24px 4px 24px;
+.portfolio-nav {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
 
+.portfolio-nav .item:not(:last-child) {
+    margin-right: 8px;
+    
+}
+
+.portfolio-titel {
     color: var(--hed-text-color);
 
     font-style: normal;
@@ -265,11 +374,42 @@ address {
 }
 
 .portfolio-text {
-    margin: 0px 24px 20px 24px;
+    margin-top: 4px;
     
     color: var(--primaey-text-color);
 
     font-weight: 400;
     font-size: 16px;
     line-height: 1.87;
+}
+
+/* Cars SET */
+.card-set {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--card-set-gap));
+    margin-top: calc(-1 * var(--card-set-gap));
+}
+
+.card-set > .item {
+    flex-basis: calc(100% / 3 - var(--card-set-gap));
+    margin-left: var(--card-set-gap);
+    margin-top: var(--card-set-gap);
+}
+
+/* CARD */
+.card {
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 20px 25px;
+    border: 1px solid #EEEEEE;
+
+    background-color: var(--background-card-content);
 }
