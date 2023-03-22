@@ -61,9 +61,6 @@ img {
     height: auto;
 }
 
-header {
-    background-color: var(--background-color-header);
-}
 
 /* Logo */
 .logo {
@@ -84,17 +81,21 @@ span {
 }
 
 .header {
+    background-color: var(--background-color-header);
+    border-bottom: 1px solid #ECECEC;
+}
+
+.header .container {
     display: flex;
-    background-color: #FFFFFF;;
-    border: 1px solid #ECECEC;
 }
 
 /*Nav sayte*/
-.site-nav {
+.site-nav,
+.site-nav .link {
     display: flex;
 }
 
-.site-nav .item {
+.site-nav .link {
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -124,8 +125,8 @@ span {
 .phone-email {
     display: flex;
     margin-left: auto;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    align-items: center;
+    
 }
 
 .phone-email .link {
@@ -148,6 +149,8 @@ span {
 
 /* Herо */
 .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
     background-color:var(--hero-backgraund-color);
     text-align: center;
     text-transform: uppercase;
@@ -155,7 +158,10 @@ span {
     
 .hero-title {
     margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
+    max-width: 696px;
 
     color: #FFFFFF;
 
@@ -169,6 +175,10 @@ span {
 /* Аdvances */
 .advance-box {
     display: flex;
+}
+
+.advance-box .item{
+    width: 270px;
 }
 
 .advance-box > .item:not(:last-child) {
@@ -281,10 +291,9 @@ address {
 
 .logo-footer {
     display: flex;
-    margin: 0;
-    padding-top: 0;
-    padding-bottom: 28px;
-
+    padding: 0;
+    margin-bottom: 28px;
+    
     color: #FFFFFF;
  }
 
@@ -409,6 +418,7 @@ address {
 
 .card-content {
     padding: 20px 25px;
+    border-top: 0;
     border: 1px solid #EEEEEE;
 
     background-color: var(--background-card-content);
